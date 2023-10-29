@@ -55,7 +55,7 @@ values
 	(107, 'Kim', 'Anderson', 'Female', '1992-12-19', '860 Spruce Rd, Town', 'kim.anderson@email.com'),
 	(108, 'Laura', 'Davis', 'Female', '1994-11-03', '121 Oak St, Village', 'laura.davis@email.com'),
 	(109, 'Mary', 'Martin', 'Female', '1986-03-02', '363 Maple Ave, City', 'mary.martin2@email.com'),
-	(110, 'Emily', 'Broad', 'Female', '1991-02-19', '448 Pine Rd, Village', 'emily.broad@email.com');
+(110, 'Emily', 'Broad', 'Female', '1991-02-19', '448 Pine Rd, Village', 'emily.broad@email.com');
 
 -- Insert data in Job_Dept table
 insert into Job_Dept (Job_ID, Job_dept, Job_desc, Salary_range)
