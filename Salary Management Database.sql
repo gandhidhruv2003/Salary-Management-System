@@ -1,7 +1,7 @@
 create database if not exists Salary;
 use Salary;
 
-drop table Salary;
+
 create table if not exists Salary(
 	Salary_ID varchar(100) primary key,
     Employee_ID varchar(100) not null,
@@ -36,13 +36,14 @@ create table if not exists Leaving(
 );
 
 create table if not exists Payroll(
-    Payroll_ID varchar(100) primary key,
+    Payroll_ID varchar(100),
+    Leave_ID varchar(100),
 	Employee_ID varchar(200) not null, 
 	Job_ID varchar(100) not null,
     Salary_ID varchar(100) not null,
-    Leave_ID varchar(100) not null,
     Date_of_Payroll date,
-    Total_Amt decimal
+    Total_Amt decimal,
+    primary key(Payroll_ID, Leave_ID)
 );
 
 -- Insert data in Employee table
@@ -365,3 +366,30 @@ values
 	(10099, 199, 'JD002', 53000, 636000, 15500),
 	(10100, 200, 'JD003', 52000, 624000, 15700);
 
+-- Insert values into Payroll table
+insert into payroll(Payroll_ID, Employee_ID, Job_ID, Salary_ID, Leave_ID, Date_of_Payroll)
+values
+('PK101', 101, 'JD001', 10001, 1060, '2023-10-12'),
+('PK102', 102, 'JD003', 10002, null, '2023-11-11'),
+('PK103', 103, 'JD002', 10003, null, '2023-12-10'),
+('PK104', 104, 'JD007', 10004, null, '2023-01-09'),
+('PK105', 105, 'JD005', 10005, null, '2023-02-08'),
+('PK106', 106, 'JD001', 10006, null, '2023-03-07'),
+('PK107', 107, 'JD008', 10007, null, '2023-04-06'),
+('PK108', 108, 'JD002', 10008, null, '2023-05-05'),
+('PK109', 109, 'JD009', 10009, null, '2023-06-04'),
+('PK110', 110, 'JD003', 10010, null, '2023-06-03'),
+('PK111', 111, 'JD005', 10011, 1075, '2023-07-02'),
+('PK112', 112, 'JD004', 10012, null, '2023-08-01'),
+('PK113', 113, 'JD007', 10013, null, '2023-09-31'),
+('PK114', 114, 'JD006', 10014, null, '2023-10-30'),
+('PK115', 115, 'JD010', 10015, 1079, '2023-11-29'),
+('PK116', 116, 'JD013', 10016, null, '2023-12-28'),
+('PK117', 117, 'JD015', 10017, 1001, '2023-01-27'),
+('PK118', 118, 'JD016', 10018, 1002, '2023-02-26'),
+('PK119', 119, 'JD017', 10019, 1003, '2023-03-25'),
+('PK120', 120, 'JD018', 10020, 1004, '2023-04-24'),
+('PK121', 121, 'JD019', 10021, 1005, '2023-05-23'),
+('PK122', 122, 'JD020', 10022, null, '2023-05-22'),
+('PK123', 123, 'JD014', 10023, 1006, '2023-06-21'),
+('PK124', 124, 'JD006', 10024, null, '2023-07-20'),
